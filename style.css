@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.developer-info {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: larger;
+}
+
+.developer-info p {
+    margin: 5px 0;
+    color: #fff;
+}
+
+.developer-info a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.developer-info i {
+    transition: color 0.3s;
+}
+
+.developer-info a:hover i {
+    color: #f9d423;
+}
+
+.container {
+    width: 800px;
+    height: 180px;
+    position: relative;
+    z-index: 1;
+}
+
+.clock {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.clock span {
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.clock span::after {
+    font-size: 16px;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #bbb;
+    text-shadow: none;
+}
+
+#hrs::after {
+    content: "Hours";
+}
+
+#min::after {
+    content: "Minutes";
+}
+
+#sec::after {
+    content: "Seconds";
+}
+
+.container::after, .container::before {
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #ff4e50, #f9d423);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    animation: move 10s infinite alternate ease-in-out;
+}
+
+.container::after {
+    right: -50px;
+    bottom: -80px;
+}
+
+.container::before {
+    left: -70px;
+    top: -70px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0px) translateY(0px);
+    }
+    100% {
+        transform: translateX(30px) translateY(30px);
+    }
+}
